@@ -4,7 +4,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
 
-HEADER = ./includes/
+HEADER = includes/minishell.h includes/struct.h
 SRCS = srcs/
 
 ###--------------- DIRS ---------------###
