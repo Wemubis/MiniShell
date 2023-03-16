@@ -6,11 +6,11 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 00:50:44 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/16 16:16:54 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:56:55 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minishell.h"
+#include "minishell.h"
 
 int	pwd_main(int ac, char **av, char** env)
 {

@@ -1,11 +1,15 @@
 NAME = minishell
 
+D_HDRS = ./includes/
+D_SRCS = srcs/
+
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+OPT = -O0
 RM = rm -f
 
-HEADER = includes/minishell.h includes/struct.h
-D_SRCS = srcs/
+###--------------- FLAG ---------------###
+CFLAGS = -Wall -Wextra -Werror -g3
+DEPFLAGS = -MMD -MP $(foreach D, $(D_HDRS),-I$(D))
 
 ###--------------- DIRS ---------------###
 DIR_BUILTIN = $(addprefix $(D_SRCS), builtin/)
@@ -25,33 +29,37 @@ EXEC = \
 PARSING = \
 
 ###--------------- DIRS + SRCS ---------------###
-SRCS_BUILTIN = $(addprefix $(DIR_BUILTIN), $(BUILTIN))
-SRCS_ENVIR = $(addprefix $(DIR_ENVIR), $(ENVIR))
-SRCS_EXEC = $(addprefix $(DIR_EXEC), $(EXEC))
-SRCS_PARSING = $(addprefix $(DIR_PARSING), $(PARSING))
-SRCS = $(SRCS_BUILTIN) $(SRCS_ENVIR) $(SRCS_EXEC) $(SRCS_PARSING) $(MAIN)
+SRCS_[1] = $(addprefix $(DIR_BUILTIN), $(BUILTIN))
+SRCS_[2] = $(addprefix $(DIR_ENVIR), $(ENVIR))
+SRCS_[3] = $(addprefix $(DIR_EXEC), $(EXEC))
+SRCS_[4] = $(addprefix $(DIR_PARSING), $(PARSING))
+SRCS = $(SRCS_[1]) $(SRCS_[2]) $(SRCS_[3]) $(SRCS_[4]) $(MAIN)
 
-###--------------- OBJS ---------------###
-OBJS = $(patsubst %.c, %.o,$(SRCS))
+###--------------- OBJS + DEP ---------------###
+OBJS = $(patsubst %.c, %.o, $(SRCS))
+DEPS = $(patsubst %.c, %.d, $(SRCS))
 
 ###--------------- PHONY ---------------###
 .PHONY: all clean fclean re otherMakefile $(NAME)
 
 ###--------------- RULES ---------------###
-all: otherMakefile $(NAME)
+all: lib $(NAME)
+
 
 $(NAME): $(OBJS) libft/libft.a
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $^ -o $@
 
-otherMakefile:
+lib:
 	@make -C libft --no-print-directory
 
-%.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -I. -c $< -o $@
+-include $(DEPS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
 
 clean:
 	@make -C libft clean
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(DEPS)
 
 fclean: clean
 	$(RM) libft/libft.a
