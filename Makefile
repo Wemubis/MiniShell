@@ -29,11 +29,11 @@ EXEC = \
 PARSING = \
 
 ###--------------- DIRS + SRCS ---------------###
-SRCS_[1] = $(addprefix $(DIR_BUILTIN), $(BUILTIN))
-SRCS_[2] = $(addprefix $(DIR_ENVIR), $(ENVIR))
-SRCS_[3] = $(addprefix $(DIR_EXEC), $(EXEC))
-SRCS_[4] = $(addprefix $(DIR_PARSING), $(PARSING))
-SRCS = $(SRCS_[1]) $(SRCS_[2]) $(SRCS_[3]) $(SRCS_[4]) $(MAIN)
+SRCS_1 = $(addprefix $(DIR_BUILTIN), $(BUILTIN))
+SRCS_2 = $(addprefix $(DIR_ENVIR), $(ENVIR))
+SRCS_3 = $(addprefix $(DIR_EXEC), $(EXEC))
+SRCS_4 = $(addprefix $(DIR_PARSING), $(PARSING))
+SRCS = $(SRCS_1) $(SRCS_2) $(SRCS_3) $(SRCS_4) $(MAIN)
 
 ###--------------- OBJS + DEP ---------------###
 OBJS = $(patsubst %.c, %.o, $(SRCS))
