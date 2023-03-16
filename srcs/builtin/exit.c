@@ -6,13 +6,13 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 00:50:38 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/17 00:19:03 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/17 00:25:57 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	exit_main()
+int	exit_main(void)
 {
 	// int exit_value;
 

@@ -6,12 +6,12 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 00:50:41 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/16 23:47:22 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/17 00:26:02 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	export_main()
+int	export_main(void)
 {
 }

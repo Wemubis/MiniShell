@@ -6,13 +6,13 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 00:50:27 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/16 23:54:36 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/17 00:25:48 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	cd_main()
+int	cd_main(void)
 {
 	// See if arg[0] = "/"
 		// Absolute path, from root
