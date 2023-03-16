@@ -5,13 +5,13 @@ CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
 
 HEADER = includes/minishell.h includes/struct.h
-SRCS = srcs/
+D_SRCS = srcs/
 
 ###--------------- DIRS ---------------###
-DIR_BUILTIN = $(addprefix $(SRCS), builtin/)
-DIR_ENVIR = $(addprefix $(SRCS), envir/)
-DIR_EXEC = $(addprefix $(SRCS), exec/)
-DIR_PARSING = $(addprefix $(SRCS), parsing/)
+DIR_BUILTIN = $(addprefix $(D_SRCS), builtin/)
+DIR_ENVIR = $(addprefix $(D_SRCS), envir/)
+DIR_EXEC = $(addprefix $(D_SRCS), exec/)
+DIR_PARSING = $(addprefix $(D_SRCS), parsing/)
 
 ###--------------- SRCS ---------------###
 MAIN = main.c \
@@ -29,14 +29,10 @@ SRCS_BUILTIN = $(addprefix $(DIR_BUILTIN), $(BUILTIN))
 SRCS_ENVIR = $(addprefix $(DIR_ENVIR), $(ENVIR))
 SRCS_EXEC = $(addprefix $(DIR_EXEC), $(EXEC))
 SRCS_PARSING = $(addprefix $(DIR_PARSING), $(PARSING))
+SRCS = $(SRCS_BUILTIN) $(SRCS_ENVIR) $(SRCS_EXEC) $(SRCS_PARSING) $(MAIN)
 
 ###--------------- OBJS ---------------###
-OBJS_MAIN = $(patsubst %.c, %.o,$(MAIN))
-OBJS_BUILTIN =  $(patsubst %.c,%.o,$(SRCS_BUILTIN))
-OBJS_ENVIR =  $(patsubst %.c,%.o,$(SRCS_ENVIR))
-OBJS_EXEC =  $(patsubst %.c,%.o,$(SRCS_EXEC))
-OBJS_PARSING =  $(patsubst %.c,%.o,$(SRCS_PARSING))
-OBJS = $(OBJS_MAIN) $(OBJS_BUILTIN) $(OBJS_ENVIR) $(OBJS_EXEC) $(OBJS_PARSING)
+OBJS = $(patsubst %.c, %.o,$(SRCS))
 
 ###--------------- PHONY ---------------###
 .PHONY: all clean fclean re otherMakefile $(NAME)
