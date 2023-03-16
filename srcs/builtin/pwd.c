@@ -1,0 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pwd.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/16 00:50:44 by mle-boud          #+#    #+#             */
+/*   Updated: 2023/03/16 01:02:21 by mle-boud         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../includes/minishell.h"
+
+#define SIZE 1024
+
+int	pwd_main(int ac, char **av, char** env)
+{
+	char	buffer[SIZE];
+
+	(void)ac;
+	(void)av;
+	(void)env;
+	ft_printf("%s\n", getcwd(buffer, SIZE - 1));
+	return(0);
+}

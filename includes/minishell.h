@@ -6,7 +6,14 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:26:32 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/15 20:26:34 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/16 01:04:07 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MINISHELL_H
+# define MINISHELL_H
+
+/*-------------------------HEAD-------------------------*/
+# include "../libft/libft.h"
+
+#endif
