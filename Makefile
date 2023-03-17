@@ -4,7 +4,6 @@ D_HDRS = ./includes/
 D_SRCS = srcs/
 
 CC = cc
-OPT = -O0
 RM = rm -f
 
 ###------------------------------ FLAG
