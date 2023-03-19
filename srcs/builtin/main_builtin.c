@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pick_a_builtin.c                                   :+:      :+:    :+:   */
+/*   main_builtin.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 13:12:00 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/19 13:26:20 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/19 13:35:06 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 t_pick_builtin	main_builtin(char *command)
 {
-	if (!ft_strcmp(command, "echo"))
-		return (main_echo);
 	if (!ft_strcmp(command, "cd"))
-		return (main_cd);
-	if (!ft_strcmp(command, "pwd"))
-		return (main_pwd);
-	if (!ft_strcmp(command, "export"))
-		return (main_export);
-	if (!ft_strcmp(command, "unset"))
-		return (main_unset);
+		return (cd_main);
+	if (!ft_strcmp(command, "echo"))
+		return (echo_main);
 	if (!ft_strcmp(command, "env"))
-		return (main_env);
+		return (env_main);
 	if (!ft_strcmp(command, "exit"))
-		return (main_exit);
+		return (exit_main);
+	if (!ft_strcmp(command, "export"))
+		return (export_main);
+	if (!ft_strcmp(command, "pwd"))
+		return (pwd_main);
+	if (!ft_strcmp(command, "unset"))
+		return (unset_main);
 	return (0);
 }

@@ -19,7 +19,8 @@ DIR_PARSING = $(addprefix $(D_SRCS), parsing/)
 ###------------------------------ SRCS
 MAIN = main.c \
 
-BUILTIN = cd.c echo.c env.c exit.c export.c pwd.c unset.c\
+BUILTIN = main_builtin.c cd.c echo.c env.c exit.c \
+	export.c pwd.c unset.c \
 
 ENVIR = \
 
