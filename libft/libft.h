@@ -60,6 +60,14 @@ int		ft_putnbr_unsigned_printf(unsigned int n);
 int		ft_ptr_b_printf(void *n, char *base);
 int		ft_putstr_printf(char *s);
 
+/*---------------D-PRINTF---------------*/
+int		ft_dprintf(int fd, const char *format, ...);
+int		ft_putnbr_dprintf(int n, int fd);
+int		ft_b_dprtf(long nb, char *base, int fd);
+int		ft_putnbr_unsigned_dprintf(unsigned int n, int fd);
+int		ft_pb_dprtf(void *n, char *base, int fd);
+int		ft_putstr_dprintf(char *s, int fd);
+
 /*-----------------GNL----------------*/
 char	*get_next_line(int fd);
 size_t	gnl_strlen(char *str);
@@ -110,7 +118,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 int		ft_putchar(int c);
-void	ft_putchar_fd(char c, int fd);
+int		ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);

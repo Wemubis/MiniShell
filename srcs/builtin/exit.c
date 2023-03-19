@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 00:50:38 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/17 16:21:16 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/19 13:05:28 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	exit_main(int ac, char **av, char **env)
 		exit_value = 0;
 	else if (ac == 2)
 	{
-		if (!ft_isdigit(av[1]))
+		if (!ft_isdigit(ft_atoi(av[1])))
 		{
-			ft_printf("error, a digit arg is reauired");
+			ft_dprintf(1, "error, a digit arg is reauired");
 			exit_value = 2;
 		}
 		else
@@ -31,9 +31,9 @@ int	exit_main(int ac, char **av, char **env)
 	}
 	else if (ac > 2)
 	{
-		ft_printf("too many args");
+		ft_dprintf(1, "too many args");
 		exit_value = 1;
 	}
-	free_all();
+	// free_all();
 	exit(exit_value);
 }

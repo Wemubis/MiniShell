@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 00:50:32 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/17 00:29:40 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/03/19 13:01:19 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int	echo_main(void)
 	if no arg ==> ft_printf("str")
 	if arg="-n"
 	*/
+	return (0);
 }
