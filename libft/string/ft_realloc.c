@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chrtrim.c                                       :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/04 17:08:25 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/03/13 22:06:43 by mle-boud         ###   ########.fr       */
+/*   Created: 2023/04/04 18:36:21 by mleboudec         #+#    #+#             */
+/*   Updated: 2023/04/04 18:44:50 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_chrtrim(char const *s1, char c)
+static int	smallest(int actual, int new)
 {
-	size_t	i;
-	size_t	len;
+	if (actual < new)
+		return (actual);
+	return (new);
+}
 
-	if (!s1)
-		return (NULL);
-	if (c == '\0')
-		return (ft_strdup(s1));
-	i = 0;
-	while (s1[i] == c)
-		i++;
-	len = ft_strlen(s1) - 1;
-	while (s1[len] == c)
-		len--;
-	return (ft_substr(s1, i, len + 1 - i));
+void	*ft_realloc(void *ptr, size_t actual_size, size_t new_size)
+{
+	void	*newptr;
+	int		size;
+
+	size = smallest(actual_size, new_size);
+	newptr = malloc(size);
+	newptr = ft_memcpy(newptr, ptr, msize);
+	free(ptr);
+	return (newptr);
 }
