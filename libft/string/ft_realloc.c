@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 18:36:21 by mleboudec         #+#    #+#             */
-/*   Updated: 2023/04/04 18:44:50 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/04 20:18:13 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_realloc(void *ptr, size_t actual_size, size_t new_size)
 
 	size = smallest(actual_size, new_size);
 	newptr = malloc(size);
-	newptr = ft_memcpy(newptr, ptr, msize);
+	newptr = ft_memcpy(newptr, ptr, size);
 	free(ptr);
 	return (newptr);
 }

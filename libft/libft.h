@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # define BUFFER_SIZE 256
+# define EOF -1
 
 /*			Text Color			*/
 # define BLACK   "\033[30m"
@@ -36,10 +37,10 @@
 /*			Underline			*/
 # define U       "\033[4m"
 # define U_OFF   "\033[24m"
-/*			Bold			*/
+/*			Bold				*/
 # define B       "\033[1m"
 # define B_OFF   "\033[22m"
-/*			Italic			*/
+/*			Italic				*/
 # define I       "\033[3m"
 # define I_OFF   "\033[23m"
 
