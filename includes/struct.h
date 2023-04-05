@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:26:29 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/04 22:07:27 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/05 17:29:43 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef enum e_type_char
 
 typedef struct s_tok
 {
-	char		*str;
+	char		*name;
 	t_type_char	type;
 } t_tok;
 

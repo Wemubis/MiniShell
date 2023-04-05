@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:26:36 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/05 15:27:54 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/05 18:29:58 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,26 @@
 int	main(int ac, char **av, char **env)
 {
 	char	*line;
-	char	**envp;
 	t_tok	*cmds;
+	t_list	*top_envp;
 
 	(void)ac;
 	(void)av;
-	envp = dup_env(env);
-	if (!envp)
-		return (free_arr(envp), 1);
+	top_envp = NULL;
+	dup_env(env, &top_envp);
 	while (1)
 	{
 		line = readline("mini$> ");
 		if (!line)
-			ft_quit(envp, parse_cmd, 0);
+			ft_quit(&top_envp, parse_cmd, 0);
 		cmds = parse_line(line);
 		if (!cmds)
 		{
 			free_arr(cmds);
 			continue ;
 		}
-		exec_cmds(envp, cmds);
+		exec_cmds(&top_envp, cmds);
 		free_arr(cmds);
 	}
-	return (free_all(envp, cmds, line), 0);
+	return (free_all(&top_envp, cmds, line), 0);
 }

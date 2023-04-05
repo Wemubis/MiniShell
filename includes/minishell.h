@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:26:32 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/05 17:12:19 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/05 18:23:42 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ int				unset_main(int ac, char **av, char **env);
 void	free_arr(char **arr);
 void	free_all(char **envp, char **parse_cmd, char *line);
 void	ft_quit(char **envp, char **parse_cmd, int status);
+
+/*---------------ENVIRONNEMENT---------------*/
+void	dup_env(char **envp, t_list **env);
 
 #endif
