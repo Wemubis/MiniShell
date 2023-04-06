@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:26:29 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/05 17:29:43 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/06 13:49:56 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 
 /*---------------BUILTIN---------------*/
 typedef int	(*t_pick_builtin)(int ac, char **av, char **env);
-
-/*---------------ENVIRONNEMENT---------------*/
-typedef struct	s_env
-{
-	char			*line;
-	struct s_env	*next;
-} t_env;
 
 /*---------------PARSING---------------*/
 typedef enum e_type_char
@@ -34,10 +27,10 @@ typedef enum e_type_char
 	OUT,
 } t_type_char;
 
-typedef struct s_tok
+typedef struct s_cmd
 {
 	char		*name;
 	t_type_char	type;
-} t_tok;
+} t_cmd;
 
 #endif

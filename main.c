@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:26:36 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/05 18:29:58 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/06 13:48:55 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int ac, char **av, char **env)
 {
 	char	*line;
-	t_tok	*cmds;
+	t_cmd	*cmds;
 	t_list	*top_envp;
 
 	(void)ac;
