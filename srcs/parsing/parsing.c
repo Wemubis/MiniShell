@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 14:00:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/06 16:17:33 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/06 16:21:45 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_cmd	*parse_line(char *line)
 	t_list	*list;
 	t_cmd	*tab_cmd;
 
-	if (ft_line_space(line) || !check_quotes(line) || !create_tab(&list, line))
+	if (ft_line_space(line) || !check_quotes(line) || !split_line(&list, line))
 		return (NULL);
 	if (check_meta_char(list) || !cmd_tab_creation(&tab_cmd, list))
 	{
