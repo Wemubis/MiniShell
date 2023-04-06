@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:26:36 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/06 13:48:55 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/06 13:58:33 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int	main(int ac, char **av, char **env)
 		cmds = parse_line(line);
 		if (!cmds)
 		{
-			free_arr(cmds);
+			free_cmds(cmds);
 			continue ;
 		}
 		exec_cmds(&top_envp, cmds);
-		free_arr(cmds);
+		free_cmds(cmds);
 	}
 	return (free_all(&top_envp, cmds, line), 0);
 }
