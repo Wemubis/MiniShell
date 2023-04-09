@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 20:03:03 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/06 16:04:12 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/07 16:39:51 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,8 @@ void	free_cmds(t_cmd **cmds)
 	while (lst)
 	{
 		tmp = lst->next;
-		free(lst->command);
-		free(lst->outfiles);
-		free(lst->infiles);
-		free_arr(lst->args);
+		free(lst->content);
+		free(lst->type);
 		free(lst);
 		lst = tmp;
 	}
