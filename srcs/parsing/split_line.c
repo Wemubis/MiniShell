@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 16:18:12 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/12 12:41:46 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/12 12:59:07 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static int	end_index(char *str, int len_arg)
 	if (!len_arg || !char_sep)
 		return (0);
 	end = find_quotes_end(str, len_arg); // to re check to better understand
-	if (end != -21)
+	if (end != -42)
 		return (free_arr(char_sep), end);
 	i = -1;
 	while (char_sep[++i])
