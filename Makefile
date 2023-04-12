@@ -12,25 +12,25 @@ DEPFLAGS = -MMD -MP $(foreach F, $(D_HDRS),-I$(F))
 
 ###------------------------------ DIRS
 DIR_BUILTIN = $(addprefix $(D_SRCS), builtin/)
-DIR_ENVIR = $(addprefix $(D_SRCS), envir/)
+DIR_ENVP = $(addprefix $(D_SRCS), envp/)
 DIR_EXEC = $(addprefix $(D_SRCS), exec/)
 DIR_PARSING = $(addprefix $(D_SRCS), parsing/)
 
 ###------------------------------ SRCS
-MAIN = main.c \
+MAIN = main.c free_all.c \
 
 BUILTIN = main_builtin.c cd.c echo.c env.c exit.c \
 	export.c pwd.c unset.c \
 
-ENVIR = \
+ENVP = dup_env.c \
 
 EXEC = \
 
-PARSING = \
+PARSING = index.c parsing.c quotes.c split_line.c \
 
 ###------------------------------ DIRS + SRCS
 SRCS_1 = $(addprefix $(DIR_BUILTIN), $(BUILTIN))
-SRCS_2 = $(addprefix $(DIR_ENVIR), $(ENVIR))
+SRCS_2 = $(addprefix $(DIR_ENVP), $(ENVP))
 SRCS_3 = $(addprefix $(DIR_EXEC), $(EXEC))
 SRCS_4 = $(addprefix $(DIR_PARSING), $(PARSING))
 SRCS = $(SRCS_1) $(SRCS_2) $(SRCS_3) $(SRCS_4) $(MAIN)
