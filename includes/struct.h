@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:26:29 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/07 16:39:03 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/11 23:52:58 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ typedef int	(*t_pick_builtin)(int ac, char **av, char **env);
 typedef enum e_type_arg
 {
 	CMD,
+	ARG,
 	PIPE,
+	INFILE,
+	OUTFILE,
+	HEREDOCS,
 	REDIR_IN,
 	REDIR_OUT
 } t_type_arg;

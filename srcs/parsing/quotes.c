@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 15:22:12 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/09 23:38:04 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/04/12 12:41:23 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,20 @@ int	check_quotes(char *line)
 	return (quotes == 0);
 }
 
+int	find_quotes_end(char *str, int len_arg)
+{
+	int		end;
+	char	c;
 
+	end = -21;
+	if (str[0] == '\'' || str[0] == '"')
+		end = end_arg(str, index(&str[1], &str[0], 1) + 2);
+	else if (len_arg > -1)
+	{
+		if (len_arg > index(str, "'", 1))
+			end = end_arg(str, index(str + 1, "'", 2) + 2);
+		else if (len_arg > index(str, "\"", 1))
+			end = end_arg(str, index(str + 1, "\"", 2) + 2);
+	}
+	return (end);
+} 
