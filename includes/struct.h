@@ -6,15 +6,12 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:26:29 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/11 23:52:58 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/05/02 13:03:57 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
-
-/*---------------BUILTIN---------------*/
-typedef int	(*t_pick_builtin)(int ac, char **av, char **env);
 
 /*---------------PARSING---------------*/
 typedef enum e_type_arg

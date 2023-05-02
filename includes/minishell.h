@@ -6,7 +6,7 @@
 /*   By: mle-boud <mle-boud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:26:32 by mle-boud          #+#    #+#             */
-/*   Updated: 2023/04/12 12:48:18 by mle-boud         ###   ########.fr       */
+/*   Updated: 2023/05/02 13:04:34 by mle-boud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 /*-------------------------FCTN-------------------------*/
 
 /*---------------BUILTIN---------------*/
-t_pick_builtin	main_builtin(char *command);
 int				cd_main(int ac, char **av, char **env);
 int				echo_main(int ac, char **av, char **env);
 int				env_main(int ac, char **av, char **env);
